@@ -1,5 +1,7 @@
 # ipmitool-sdr-mock
 
+[![Build Status](https://dev.azure.com/ssc1729/ipmitool-sdr-mock/_apis/build/status/ssc1729.ipmitool-sdr-mock.build?branchName=main)](https://dev.azure.com/ssc1729/ipmitool-sdr-mock/_build/latest?definitionId=5&branchName=main)
+
 `ipmitool-sdr-mock` is utility to mock the functionality of sub-command `sdr` in [ipmitool](https://github.com/ipmitool/ipmitool). 
 
 # How to Install?
