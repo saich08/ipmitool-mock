@@ -1,0 +1,53 @@
+trigger:
+- main
+
+pr:
+- none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+  displayName: 'Create Python Environment'
+
+- script: |
+    pip3 install -r requirements.txt
+  displayName: 'Install Requirements'
+
+- script: |
+    flake8
+  displayName: 'Run Flake8'
+
+- script: |
+    cd src && pyinstaller --onefile --name ipmitool ipmitool-sdr-mock.py
+  displayName: 'Build Solution'
+
+- script: |
+    cd src/dist && zip $(System.DefaultWorkingDirectory)/ipmitool-linux.zip ipmitool
+  displayName: 'Zip Assets'
+
+- script: |
+    VERSION_INFO=$(cat $(System.DefaultWorkingDirectory)/version.txt)
+    echo "##vso[task.setvariable variable=VERSION]$VERSION_INFO"
+  displayName: 'Get Version Info'
+
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'github.com_ssc1729'
+    repositoryName: '$(Build.Repository.Name)'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'userSpecifiedTag'
+    tag: '$(VERSION)'
+    title: 'ipmitool-sdr-mock-$(VERSION)'
+    releaseNotesFilePath: '$(System.DefaultWorkingDirectory)/README.md'
+    assets: |
+      $(System.DefaultWorkingDirectory)/ipmitool-linux.zip
+      $(System.DefaultWorkingDirectory)/README.md
+    isPreRelease: true
+    addChangeLog: false
+  displayName: 'Create GitHub Release'
+
