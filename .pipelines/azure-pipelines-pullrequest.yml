@@ -1,0 +1,26 @@
+trigger:
+- none
+
+pr:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+  displayName: 'Create Python Environment'
+
+- script: |
+    pip3 install -r requirements.txt
+  displayName: 'Install Requirements'
+
+- script: |
+    flake8
+  displayName: 'Run Flake8'
+
+- script: |
+    cd src && pyinstaller --name ipmitool ipmitool-sdr-mock.py
+  displayName: 'Build Solution'
