@@ -47,7 +47,8 @@ steps:
     assets: |
       $(System.DefaultWorkingDirectory)/ipmitool-linux.zip
       $(System.DefaultWorkingDirectory)/README.md
-    isPreRelease: true
+    # uncomment below line in case of pre-release build
+    # isPreRelease: true
     addChangeLog: false
   displayName: 'Create GitHub Release'
 
