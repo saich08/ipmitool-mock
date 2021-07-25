@@ -22,5 +22,5 @@ steps:
   displayName: 'Run Flake8'
 
 - script: |
-    cd src && pyinstaller --name ipmitool ipmitool-sdr-mock.py
+    cd src && pyinstaller --name ipmitool ipmitool-mock.py
   displayName: 'Build Solution'

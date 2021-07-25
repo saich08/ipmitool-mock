@@ -1,8 +1,8 @@
-# ipmitool-sdr-mock
+# ipmitool-mock
 
-[![Build Status](https://dev.azure.com/ssc1729/ipmitool-sdr-mock/_apis/build/status/ssc1729.ipmitool-sdr-mock.build?branchName=main)](https://dev.azure.com/ssc1729/ipmitool-sdr-mock/_build/latest?definitionId=5&branchName=main)
+[![Build Status](https://dev.azure.com/ssc1729/ipmitool-mock/_apis/build/status/ssc1729.ipmitool-mock.build?branchName=main)](https://dev.azure.com/ssc1729/ipmitool-mock/_build/latest?definitionId=7&branchName=main)
 
-`ipmitool-sdr-mock` is utility to mock the functionality of sub-command `sdr` in [ipmitool](https://github.com/ipmitool/ipmitool). 
+`ipmitool-mock` is utility to mock the functionality [ipmitool](https://github.com/ipmitool/ipmitool). 
 
 # How to Install?
 
@@ -10,7 +10,7 @@
 
 ```
 # download release file
->> wget https://github.com/ssc1729/ipmitool-sdr-mock/releases/download/<version>/ipmitool-linux.zip
+>> wget https://github.com/ssc1729/ipmitool-mock/releases/download/<version>/ipmitool-linux.zip
 
 # unzip release file
 >> unzip ipmitool-linux.zip
@@ -18,7 +18,7 @@
 # copy binary file to /use/local/bin, need sudo privileges
 >> sudo cp ipmitool /usr/local/bin/
 
-# run ipmitool-sdr-mock commands
+# run ipmitool-mock commands
 >> ipmitool sdr
 >> ipmitool sdr elist
 ```
@@ -27,10 +27,10 @@
 
 ```
 # clone repository, alternativly download from latest release
->> git clone https://github.com/ssc1729/ipmitool-sdr-mock
+>> git clone https://github.com/ssc1729/ipmitool-mock
 
 # create python virtual environment
->> cd ipmitool-sdr-mock
+>> cd ipmitool-mock
 >> python3 -m virtualenv venv
 
 # activate virtualenv
@@ -43,14 +43,14 @@
 
 # generate binary file
 >> cd src
->> pyinstaller --onefile --name ipmitool ipmitool-sdr-mock.py
+>> pyinstaller --onefile --name ipmitool ipmitool-mock.py
 
 # copy binary file to /use/local/bin, need sudo privileges
 # for windows, add ipmitool binary file to environment path
 >> cd dist
 >> sudo cp ipmitool /usr/local/bin/
 
-# run ipmitool-sdr-mock commands
+# run ipmitool-mock commands
 >> ipmitool sdr
 >> ipmitool sdr elist
 ```
