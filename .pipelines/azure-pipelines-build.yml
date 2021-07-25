@@ -22,7 +22,7 @@ steps:
   displayName: 'Run Flake8'
 
 - script: |
-    cd src && pyinstaller --onefile --name ipmitool ipmitool-sdr-mock.py
+    cd src && pyinstaller --onefile --name ipmitool ipmitool-mock.py
   displayName: 'Build Solution'
 
 - script: |
@@ -42,7 +42,7 @@ steps:
     target: '$(Build.SourceVersion)'
     tagSource: 'userSpecifiedTag'
     tag: '$(VERSION)'
-    title: 'ipmitool-sdr-mock-$(VERSION)'
+    title: 'ipmitool-mock-$(VERSION)'
     releaseNotesFilePath: '$(System.DefaultWorkingDirectory)/README.md'
     assets: |
       $(System.DefaultWorkingDirectory)/ipmitool-linux.zip
