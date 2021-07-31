@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/ssc1729/ipmitool-mock/_apis/build/status/ssc1729.ipmitool-mock.build?branchName=main)](https://dev.azure.com/ssc1729/ipmitool-mock/_build/latest?definitionId=7&branchName=main)
 
-`ipmitool-mock` is utility to mock the functionality [ipmitool](https://github.com/ipmitool/ipmitool). 
+`ipmitool-mock` is utility to mock the functionality of [ipmitool](https://github.com/ipmitool/ipmitool). 
 
 # How to Install?
 

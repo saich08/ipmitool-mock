@@ -1,7 +1,7 @@
 import click
 
-from sdr.sdr import SDRMock
-from sdr.sdr_elist import SDREListMock
+from cmds.sdr import SDRMock, SDRElistMock
+from cmds.sensor import SensorMock
 
 
 @click.group()
@@ -14,17 +14,19 @@ def main():
 def sdr(ctx):
     if ctx.invoked_subcommand is None:
         sdr_mock = SDRMock()
-        sdr_mock_result = str(sdr_mock)
-
-        print(sdr_mock_result)
+        print(sdr_mock)
 
 
 @sdr.command('elist', help='sdr elist help')
 def sdr_elist():
-    sdr_elist_mock = SDREListMock()
-    sdr_elist_mock_result = str(sdr_elist_mock)
+    sdr_elist_mock = SDRElistMock()
+    print(sdr_elist_mock)
 
-    print(sdr_elist_mock_result)
+
+@main.group('sensor', invoke_without_command=True, help='sensor help')
+def sensor():
+    sensor_mock = SensorMock()
+    print(sensor_mock)
 
 
 if __name__ == '__main__':
