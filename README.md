@@ -61,26 +61,32 @@
 
 ```
 >> ipmitool sdr
-System Fan 1     | 9403 RPM          | ok
-System Fan 2     | 9509 RPM          | ok
-System Fan 3     | 9398 RPM          | ok
-System Fan 4     | 9804 RPM          | ok
-PS1 Input Power  | 113 Watts         | ok
-PS2 Input Power  | 115 Watts         | ok
-PS1 Temperature  | 21 degrees C      | ok
-PS2 Temperature  | 21 degrees C      | ok
+System Fan 1     | 9292 RPM          | ok
+System Fan 2     | 9253 RPM          | ok
+PS1 Input Power  | 104 Watts         | ok
+PS2 Input Power  | 101 Watts         | ok
+PS1 Temperature  | 25 degrees C      | ok
+PS2 Temperature  | 25 degrees C      | ok
 PS1 Status       | 0x00              | ok
 PS2 Status       | 0x00              | ok
 
 >> ipmitool sdr elist
-System Fan 1     | 0Ah | ok | 10.1 | 9262 RPM
-System Fan 2     | 0Bh | ok | 10.2 | 9971 RPM
-System Fan 3     | 0Ch | ok | 10.3 | 9582 RPM
-System Fan 4     | 0Dh | ok | 10.4 | 9990 RPM
-PS1 Input Power  | 01h | ok | 11.1 | 104 Watts
-PS2 Input Power  | 02h | ok | 11.2 | 118 Watts
-PS1 Temperature  | 01h | ok | 11.1 | 28 degrees C
-PS2 Temperature  | 02h | ok | 11.2 | 29 degrees C
-PS1 Status       | 01h | ok | 11.1 | Presence detected 
+System Fan 1     | 0Ah | ok | 10.1 | 9568 RPM
+System Fan 2     | 0Bh | ok | 10.2 | 9807 RPM
+PS1 Input Power  | 01h | ok | 11.1 | 115 Watts
+PS2 Input Power  | 02h | ok | 11.2 | 107 Watts
+PS1 Temperature  | 01h | ok | 11.1 | 23 degrees C
+PS2 Temperature  | 02h | ok | 11.2 | 27 degrees C
+PS1 Status       | 01h | ok | 11.1 | Presence detected
 PS2 Status       | 02h | ok | 11.2 | Presence detected
+
+>> ipmitool sensor
+System Fan 1     | 9650.000   | RPM        | ok    | 300.000   | 500.000   | 700.000   | 25300.000 | 25400.000 | 25500.000
+System Fan 2     | 9555.000   | RPM        | ok    | 300.000   | 500.000   | 700.000   | 25300.000 | 25400.000 | 25500.000
+PS1 Input Power  | 102.000    | Watts      | ok    | na        | na        | na        | 1700.000  | 1800.000  | 2200.000
+PS2 Input Power  | 103.000    | Watts      | ok    | na        | na        | na        | 1700.000  | 1800.000  | 2200.000
+PS1 Temperature  | 28.000     | degrees C  | ok    | na        | 5.000     | 16.000    | 53.000    | 60.000    | 65.000
+PS2 Temperature  | 25.000     | degrees C  | ok    | na        | 5.000     | 16.000    | 53.000    | 60.000    | 65.000
+PS1 Status       | 0x1        | discrete   | 0x0100| na        | na        | na        | na        | na        | na
+PS2 Status       | 0x1        | discrete   | 0x0100| na        | na        | na        | na        | na        | na
 ```
