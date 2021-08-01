@@ -33,7 +33,7 @@ def sensor():
 
 
 @main.group('sel', invoke_without_command=True, help='Print System Event Log (SEL)')
-def sensor():
+def sel():
     sel_mock = SELMock()
     print(sel_mock)
 
