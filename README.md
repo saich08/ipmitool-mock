@@ -60,7 +60,7 @@
 ## Sample output
 
 ```
->> ipmitool sdr
+>> ipmitool -U <username> -P <password> sdr
 System Fan 1     | 9292 RPM          | ok
 System Fan 2     | 9253 RPM          | ok
 PS1 Input Power  | 104 Watts         | ok
@@ -70,7 +70,7 @@ PS2 Temperature  | 25 degrees C      | ok
 PS1 Status       | 0x00              | ok
 PS2 Status       | 0x00              | ok
 
->> ipmitool sdr elist
+>> ipmitool -U <username> -P <password> sdr elist
 System Fan 1     | 0Ah | ok | 10.1 | 9568 RPM
 System Fan 2     | 0Bh | ok | 10.2 | 9807 RPM
 PS1 Input Power  | 01h | ok | 11.1 | 115 Watts
@@ -80,7 +80,7 @@ PS2 Temperature  | 02h | ok | 11.2 | 27 degrees C
 PS1 Status       | 01h | ok | 11.1 | Presence detected
 PS2 Status       | 02h | ok | 11.2 | Presence detected
 
->> ipmitool sensor
+>> ipmitool -U <username> -P <password> sensor
 System Fan 1     | 9650.000   | RPM        | ok    | 300.000   | 500.000   | 700.000   | 25300.000 | 25400.000 | 25500.000
 System Fan 2     | 9555.000   | RPM        | ok    | 300.000   | 500.000   | 700.000   | 25300.000 | 25400.000 | 25500.000
 PS1 Input Power  | 102.000    | Watts      | ok    | na        | na        | na        | 1700.000  | 1800.000  | 2200.000
@@ -89,4 +89,9 @@ PS1 Temperature  | 28.000     | degrees C  | ok    | na        | 5.000     | 16.
 PS2 Temperature  | 25.000     | degrees C  | ok    | na        | 5.000     | 16.000    | 53.000    | 60.000    | 65.000
 PS1 Status       | 0x1        | discrete   | 0x0100| na        | na        | na        | na        | na        | na
 PS2 Status       | 0x1        | discrete   | 0x0100| na        | na        | na        | na        | na        | na
+
+>> ipmitool -U <username> -P <password> sel
+1    | 08/01/2021 | 15:44:56 | Fan #0x96 | Lower Critical going low  | Asserted
+2    | 08/01/2021 | 15:44:56 | Fan #0x96 | Lower Non-recoverable going low  | Asserted
+3    | 08/01/2021 | 15:44:56 | Fan #0x96 | Lower Non-recoverable going low  | Deasserted
 ```
